@@ -113,10 +113,9 @@ nav ul{
   gap: 11px;
   flex-wrap: wrap;
 }
-.categoryBtn button{
+.categoryBtn button, button.learnmore{
   gap: 11px;
-  width: 130px;
-  height: 33px;
+  padding:10px 20px;
   background-color: rgb(255, 108, 108);
   border: none;
   outline: none;
@@ -124,7 +123,11 @@ nav ul{
   border-radius: 16px;
   color: white;
   cursor: pointer;
-  padding: 2px;
+text-align: center;
+}
+button.learnmore{
+
+  margin-block: 50px 20px;
 }
 
 
