@@ -342,3 +342,19 @@ input[type="radio"]{
     margin-top: 22px;
   }
 }
+
+
+/* single */
+.infotop{
+  display:flex;
+  flex-wrap: wrap;
+
+}
+.single{
+  padding-block:60px;
+}
+.single figure{
+  max-width:800px;
+  overflow: hidden;
+  height:500px;
+}

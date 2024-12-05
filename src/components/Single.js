@@ -1,0 +1,70 @@
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+
+
+const Single = () => {
+    const {mealids} = useParams();
+    const [info, setInfo] = useState()
+    // console.log("mealId",mealids)
+
+    const getInfo = async () =>{
+        const get =  await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealids}`);
+        const jsonData = await get.json();
+        console.log("jpt",jsonData.meals[0]);
+        setInfo(jsonData.meals[0])
+    }
+    useEffect(()=>{
+        getInfo()
+    },[])
+    // if(info != ""){
+    //     getInfo()
+    // }
+
+  return (
+    <div className='single'>
+   <div className='container'>
+    { !info ? "Data Not Found" : 
+    <div className='mealInfo'>
+        <div className='infotop'>
+            <figure>
+                   <img src={info.strMealThumb}/>
+            </figure>
+            <div class="info_det">
+             <div><strong>tag: </strong>{info.strTags}</div>
+            <div className="info_ingredient">
+                <h2>Ingredient</h2>
+                <ol>
+            {Array.from({ length: 20 }, (_, i) => {
+                const ingredientKey = `strIngredient${i + 1}`;
+                const measureKey = `strMeasure${i + 1}`;
+
+                    if (info[ingredientKey] && info[ingredientKey].trim() !== "") {
+                        return (
+                          <li key={i}>
+                            {info[measureKey]} {info[ingredientKey]}
+                          </li>
+                        );
+                      }
+                      return null;
+            })}
+            </ol>
+            </div>
+            </div>
+ 
+    </div>
+
+ <div className='info'>
+    <h1>Recipe Detail</h1>
+    <button>{info.strMeal}</button>
+    <h3>Intruction's</h3>
+    <p>{info.strInstructions}</p>
+    <a href={info.strSource} target='_blank'>Source</a>
+ </div>
+</div>
+}
+ </div>
+ </div>
+  )
+}
+
+export default Single

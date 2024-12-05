@@ -22,7 +22,7 @@ const Header = () => {
         <div className={`nav-elements  ${showNavbar && "active"}`}>
           <ul>
             <li>
-              <NavLink to="/">Home</NavLink>
+              <NavLink to="/news">News</NavLink>
             </li>
             <li>
               <NavLink to="/receipe">Receipe</NavLink>
