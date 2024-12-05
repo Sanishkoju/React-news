@@ -8,7 +8,7 @@ const Newsapp = () => {
     const [number, setNumber] = useState(noofpost)
     const [Updatednumber, setUpdatednumber] = useState(noofpost); 
     const [Totalarticles, setTotalarticles] = useState(0); 
-    const API_KEY ='0108ed76dbb34b7489049c85f4d1f639'
+    const API_KEY ='ae52dcb7e6104c838adf73fbbfa05a2e'
 
     const getData =async() =>{
         try{
@@ -41,14 +41,20 @@ const Newsapp = () => {
     const handleInput =(e) =>{
         console.log(e.target.value);
         setSearch(e.target.value);
-        getData()
+        // getData()
         setNumber(noofpost);
         
     }
+    const handleMain =()=> {
+        setSearch("nepal");
+        setNumber(noofpost);
+    }
+
     const userInput = (event) =>{
         setSearch(event.target.value)
         setNumber(noofpost)
-        getData()
+        // (event.target.value == "null")? setSearch("nepal") : setSearch(event.target.value)
+        // getData()
         console.log(event.target.value);
     }
     const handleLoad = () =>{
@@ -63,14 +69,14 @@ const Newsapp = () => {
         getData();
         setUpdatednumber(number);
         console.log("Updatednumber",Updatednumber)
-      }, [number]);
+      }, [number, search]);
 
 
   return (
     <section>
     <nav>
         <div>
-            <h1>Trendy News</h1>
+            <h1 onClick={handleMain} className="title-head">Trendy News</h1>
         </div>
         <ul style={{display:"flex", gap:"11px"}}>
             <span style={{fontWeight:600, fontSize:"17px"}}>All News ({Totalarticles})</span>
@@ -94,8 +100,8 @@ const Newsapp = () => {
     </div>
 
     <div className="container">
-    {newsData?  <Card data={newsData}/> : null}
-    {(Totalarticles >= Updatednumber) ? <button onClick={handleLoad} className="learnmore">
+    {newsData?  <Card data={newsData}/> : "nothing found"}
+    {(Totalarticles > Updatednumber) ? <button onClick={handleLoad} className="learnmore">
         Learn More
     </button> : null } 
     </div>

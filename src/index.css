@@ -129,7 +129,9 @@ button.learnmore{
 
   margin-block: 50px 20px;
 }
-
+.title-head{
+  cursor: pointer;
+}
 
 .head{
   text-align: center;
