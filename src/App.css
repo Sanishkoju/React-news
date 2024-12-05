@@ -228,7 +228,7 @@ input[type="radio"]{
 .receipe .card {
   /* width: 200px; */
   background-color: white;
-  margin: 10px;
+  /* margin: 10px; */
   border-radius: 5px;
   padding-bottom: 10px;
 }
