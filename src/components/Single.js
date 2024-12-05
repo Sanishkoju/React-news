@@ -4,14 +4,18 @@ import { useParams } from 'react-router-dom'
 
 const Single = () => {
     const {mealids} = useParams();
-    const [info, setInfo] = useState()
+    const [info, setInfo] = useState();
+    const [isLoading, setIsLoading] = useState(false);
+    
     // console.log("mealId",mealids)
 
     const getInfo = async () =>{
+      setIsLoading(true);  
         const get =  await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealids}`);
         const jsonData = await get.json();
         console.log("jpt",jsonData.meals[0]);
         setInfo(jsonData.meals[0])
+        setIsLoading(false);
     }
     useEffect(()=>{
         getInfo()
@@ -30,7 +34,10 @@ const Single = () => {
                    <img src={info.strMealThumb}/>
             </figure>
             <div class="info_det">
+              { info.strTags ?
              <div><strong>tag: </strong>{info.strTags}</div>
+             : null
+             }
             <div className="info_ingredient">
                 <h2>Ingredient</h2>
                 <ol>
@@ -63,8 +70,13 @@ const Single = () => {
 </div>
 }
  </div>
+ {/* <div className={`spinner ${isLoading ? "active" : ""}`}>
+
+  <div className='loader'></div>
+ </div> */}
  </div>
   )
 }
 
 export default Single
+

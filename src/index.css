@@ -7,6 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -114,7 +115,7 @@ nav ul{
   gap: 11px;
   flex-wrap: wrap;
 }
-.categoryBtn button, button.learnmore{
+.categoryBtn button, button.learnmore , button.learnmorenext{
   gap: 11px;
   padding:10px 20px;
   background-color: rgb(255, 108, 108);
@@ -129,6 +130,19 @@ text-align: center;
 button.learnmore{
 
   margin-block: 50px 20px;
+}
+
+.buttons{
+  display:flex;
+  width:100%;
+  justify-content: space-between;
+
+}
+button.learnmoreprev{
+  justify-self:flex-start;
+}
+button.learnmorenext{
+  justify-self:flex-end;
 }
 .title-head{
   cursor: pointer;
