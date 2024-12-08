@@ -21,9 +21,7 @@ const Header = () => {
         </div>
         <div className={`nav-elements  ${showNavbar && "active"}`}>
           <ul>
-            <li>
-              <NavLink to="/news">News</NavLink>
-            </li>
+
             <li>
               <NavLink to="/receipe">Receipe</NavLink>
             </li>
