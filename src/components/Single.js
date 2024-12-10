@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-
-
+import NotFound from '../pages/NotFound';
 const Single = () => {
     const {mealids} = useParams();
     const [info, setInfo] = useState();
     const [isLoading, setIsLoading] = useState(false);
-    
+ 
     // console.log("mealId",mealids)
 
     const getInfo = async () =>{
@@ -23,6 +22,12 @@ const Single = () => {
     // if(info != ""){
     //     getInfo()
     // }
+
+    const isValidMealId = mealids && /^[0-9]+$/.test(mealids);
+
+  if (!isValidMealId) {
+    return <NotFound />;
+  }
 
   return (
     <div className='single'>
@@ -77,8 +82,10 @@ const Single = () => {
 </div>
 </div>
  </div>
-  )
-}
+
+    )
+  }
+
 
 export default Single
 
