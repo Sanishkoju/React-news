@@ -19,7 +19,7 @@ const Newsapp = () => {
         const Totalarticles = jsonData.articles.length;
         setTotalarticles(Totalarticles);
         console.log("Totalarticle",Totalarticles)
-        console.log(jsonData.articles);
+        console.log("jjj",jsonData);
         console.log("Total articles:", jsonData.articles.length);
 
 
@@ -105,7 +105,7 @@ const Newsapp = () => {
     </div>
 
     <div className="container">
-    {newsData?  <Card data={newsData}/> : "nothing found"}
+    {newsData && newsData.length > 0 ?  (<Card data={newsData}/>) : <p>nothing found</p>}
     {(Totalarticles > Updatednumber) ? <button onClick={handleLoad} className="learnmore">
         Learn More
     </button> : null } 

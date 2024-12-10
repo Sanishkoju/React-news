@@ -12,7 +12,7 @@ const Receipemain = () => {
     const [recipes, setRecipes] =useState([]);
     const [number, setNumber] = useState(noofpost)
     const [Updatednumber, setUpdatednumber] = useState(noofpost); 
-    const [Totalarticles, setTotalarticles] = useState("null");  
+    const [Totalarticles, setTotalarticles] = useState(0);  
 
     const searchRecipes =async () =>{
       try{
@@ -20,13 +20,14 @@ const Receipemain = () => {
         const url = apiUrl + query;
         const res = await fetch(url);
         const data= await res.json();
-        console.log("data",data)
         
         setRecipes(data.meals);
+        console.log("recipes",recipes.length)
+        
 
         const Totalarticles = data.meals.length;
         setTotalarticles(Totalarticles);
-        console.log("Totalarticle",Totalarticles)
+        console.log("Totalarticless",Totalarticles)
 
 
 
@@ -46,7 +47,7 @@ const Receipemain = () => {
     };
     useEffect(()=>{
         searchRecipes();
-        
+       
         
     },[])
 const handleQuery =(event) =>{
@@ -76,7 +77,7 @@ const handleQuery =(event) =>{
       searchRecipes()
     }, [number]);
 
-
+    
 
   return (
 
@@ -112,7 +113,7 @@ const handleQuery =(event) =>{
     {((Totalarticles < Updatednumber && Totalarticles > noofpost) || Updatednumber > noofpost ) ? <button onClick={handleprev} className="learnmore learnmoreprev">
         Prev
     </button> : null } 
-    {(Totalarticles > Updatednumber && !Totalarticles == 0 ) ? <button onClick={handlenext} className="learnmorenext learnmore">
+    {((Totalarticles > Updatednumber && !Totalarticles == 0 ) ) ? <button onClick={handlenext} className="learnmorenext learnmore">
         Next
     </button> : null } 
     </div>
