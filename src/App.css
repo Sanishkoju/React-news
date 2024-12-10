@@ -446,6 +446,7 @@ position: absolute;
 
 .single, .receipe{
   position:relative;
+  padding-top: 65px;
 }
 .spinner{
   display:none;
