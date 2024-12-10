@@ -444,7 +444,7 @@ position: absolute;
   100% { transform: rotate(360deg);}
 }
 
-.single, .receipe{
+.single, .receipe,section{
   position:relative;
   padding-top: 65px;
 }

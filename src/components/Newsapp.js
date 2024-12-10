@@ -11,7 +11,7 @@ const Newsapp = () => {
     const [Updatednumber, setUpdatednumber] = useState(noofpost); 
     const [Totalarticles, setTotalarticles] = useState(0); 
     const API_KEY =process.env.REACT_APP_API_KEY
-    console.log("API_KEY",API_KEY)
+    // console.log("API_KEY",API_KEY)
 
     const getData =async() =>{
         try{
