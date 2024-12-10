@@ -113,9 +113,11 @@ const handleQuery =(event) =>{
     {((Totalarticles < Updatednumber && Totalarticles > noofpost) || Updatednumber > noofpost ) ? <button onClick={handleprev} className="learnmore learnmoreprev">
         Prev
     </button> : null } 
-    {((Totalarticles > Updatednumber && !Totalarticles == 0 ) ) ? <button onClick={handlenext} className="learnmorenext learnmore">
+    
+    {((Totalarticles > Updatednumber && !Totalarticles == 0 && recipes.length > 0  ) ) ? <button onClick={handlenext} className="learnmorenext learnmore">
         Next
-    </button> : null } 
+    </button> : null }
+
     </div>
   </div>
   <div className={`spinner ${isLoading ? "active" : ""}`}>

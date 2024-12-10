@@ -20,6 +20,7 @@ const Newsapp = () => {
         const jsonData =await response.json();
         const Totalarticles = jsonData.articles.length;
         setTotalarticles(Totalarticles);
+
         console.log("Totalarticle",Totalarticles)
         console.log("jjj",jsonData);
         console.log("Total articles:", jsonData.articles.length);
@@ -87,12 +88,12 @@ const Newsapp = () => {
         </div>
         <ul style={{display:"flex", gap:"11px"}}>
             <span style={{fontWeight:600, fontSize:"17px"}}>All News ({Totalarticles})</span>
-            <span style={{fontWeight:600, fontSize:"17px"}}>Current News ({Updatednumber})</span>
+            <span style={{fontWeight:600, fontSize:"17px"}}>Current News ({(Updatednumber < Totalarticles) ? Updatednumber : Totalarticles })</span>
 
         </ul>
         <div className='searchBar'>
             <input type='text' placeholder='Search News' value={search} onChange={handleInput}/>
-            <button onClick={getData}>Search</button>
+            {/* <button onClick={getData}>Search</button> */}
         </div>
     </nav>
     <div>
@@ -108,7 +109,7 @@ const Newsapp = () => {
 
     <div className="container">
     {newsData && newsData.length > 0 ?  (<Card data={newsData}/>) : <p>nothing found</p>}
-    {(Totalarticles > Updatednumber) ? <button onClick={handleLoad} className="learnmore">
+    {(Totalarticles > Updatednumber && newsData.length > 0) ? <button onClick={handleLoad} className="learnmore">
         Learn More
     </button> : null } 
     </div>
