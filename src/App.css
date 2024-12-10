@@ -353,6 +353,7 @@ position: absolute;
     width: 100%;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
 }
 @media (max-width: 768px) {
   .nav-elements ul li:not(:last-child) {
