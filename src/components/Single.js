@@ -9,11 +9,16 @@ const Single = () => {
     // console.log("mealId",mealids)
 
     const getInfo = async () =>{
+      try{
       setIsLoading(true);  
         const get =  await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealids}`);
         const jsonData = await get.json();
         console.log("jpt",jsonData.meals[0]);
         setInfo(jsonData.meals[0])
+      } catch (error) {
+        setInfo(null)
+        console.log("not found",info) 
+      }
         setIsLoading(false);
     }
     useEffect(()=>{
@@ -23,7 +28,7 @@ const Single = () => {
     //     getInfo()
     // }
 
-    const isValidMealId = mealids && /^[0-9]+$/.test(mealids);
+    let isValidMealId = mealids && /^[0-9]+$/.test(mealids);
 
   if (!isValidMealId) {
     return <NotFound />;
