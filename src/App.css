@@ -389,11 +389,7 @@ position: absolute;
 
   .nav-elements.active {
     width: 270px;
-<<<<<<< HEAD
-    z-index: 4;
-=======
-    z-index:4;
->>>>>>> 251ea54de8f6cd3a3660e5f1f0f4deca3b03fd04
+
   }
 
   .nav-elements ul {
