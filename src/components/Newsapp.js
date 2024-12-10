@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import Card from './Card'
 
+
 const Newsapp = () => {
     let noofpost = 8;
     const [isLoading, setIsLoading] = useState(false);
@@ -9,7 +10,8 @@ const Newsapp = () => {
     const [number, setNumber] = useState(noofpost)
     const [Updatednumber, setUpdatednumber] = useState(noofpost); 
     const [Totalarticles, setTotalarticles] = useState(0); 
-    const API_KEY ='ae52dcb7e6104c838adf73fbbfa05a2e'
+    const API_KEY =process.env.REACT_APP_API_KEY
+    console.log("API_KEY",API_KEY)
 
     const getData =async() =>{
         try{
