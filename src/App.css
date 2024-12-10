@@ -389,6 +389,7 @@ position: absolute;
 
   .nav-elements.active {
     width: 270px;
+    z-index: 4;
   }
 
   .nav-elements ul {
@@ -422,16 +423,16 @@ position: absolute;
 .spinner */
 
 .loader {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   border: 10px solid #fa0;
   border-top: 10px solid tomato;
   border-radius: 50%;
   animation: spin 1s linear infinite;
   position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: calc(50% - 40px);
+    left: calc(50% - 40px)
+
     
 }
 
@@ -440,17 +441,67 @@ position: absolute;
   100% { transform: rotate(360deg);}
 }
 
-/* .single, .receipe{
+.single, .receipe{
   position:relative;
-} */
+}
 .spinner{
   display:none;
   width:100vw;
   height:100vh;
   position: fixed;
+  top:0%;
+  left:0%;
+ 
   background-color:#000000a6;
 }
 .spinner.active{
   display: block;
+  margin: auto;
  
+}
+
+/* accordians */
+.accordianswrapper:not(:last-child){
+  border-bottom: 1px solid #e9ecef;
+}
+
+ .accordiancontent{
+  transition: all 0.3s ease-in-out;
+  overflow:hidden;
+  padding-inline: 20px;
+  background-color: #ffffff;
+      color: #6c757d;
+      font-size: 14px;
+      line-height: 1.6;
+}
+.accordianquestion{
+  padding: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background-color: #f1f3f5;
+} 
+.accordian_container{
+  width: 100%;
+  max-width: 500px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin:auto;
+}
+.icon{
+  position: absolute;
+  right:20px;
+  top:calc(50% - 18/2 );
+  transition:transform 0.3s ease-in-out ;
+}
+.accordianquestion.open .icon{
+ transform: rotatez(-180deg);
+}
+.accordians_sec{
+  padding-block: 60px;
 }

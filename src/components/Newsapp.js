@@ -3,6 +3,7 @@ import Card from './Card'
 
 const Newsapp = () => {
     let noofpost = 8;
+    const [isLoading, setIsLoading] = useState(false);
     const [search ,setSearch] = useState("nepal")
     const [newsData, setNewsData] = useState(null)
     const [number, setNumber] = useState(noofpost)
@@ -12,6 +13,7 @@ const Newsapp = () => {
 
     const getData =async() =>{
         try{
+        setIsLoading(true)
         const response = await fetch(`https://newsapi.org/v2/everything?q=${search}&apiKey=${API_KEY}`);
         const jsonData =await response.json();
         const Totalarticles = jsonData.articles.length;
@@ -31,11 +33,13 @@ const Newsapp = () => {
           console.error("Error fetching data:", error);
           setNewsData([]); // Set empty data to avoid rendering errors
         }
+        setIsLoading(false);
 
 
     }
     useEffect(()=>{
         getData();
+
         
     },[])
     const handleInput =(e) =>{
@@ -53,6 +57,7 @@ const Newsapp = () => {
     const userInput = (event) =>{
         setSearch(event.target.value)
         setNumber(noofpost)
+        
         // (event.target.value == "null")? setSearch("nepal") : setSearch(event.target.value)
         // getData()
         console.log(event.target.value);
@@ -64,7 +69,7 @@ const Newsapp = () => {
        
     }
     useEffect(() => {
-        
+        setIsLoading(true)
         console.log("Updated number:", number);
         getData();
         setUpdatednumber(number);
@@ -105,6 +110,12 @@ const Newsapp = () => {
         Learn More
     </button> : null } 
     </div>
+    <div className={`spinner ${isLoading ? "active" : ""}`}>
+
+<div className='loader'>
+  
+</div>
+</div>
 
 </section>
   )

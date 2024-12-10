@@ -70,10 +70,12 @@ const Single = () => {
 </div>
 }
  </div>
- {/* <div className={`spinner ${isLoading ? "active" : ""}`}>
+ <div className={`spinner ${isLoading ? "active" : ""}`}>
 
-  <div className='loader'></div>
- </div> */}
+<div className='loader'>
+  
+</div>
+</div>
  </div>
   )
 }

@@ -12,7 +12,7 @@ const Receipemain = () => {
     const [recipes, setRecipes] =useState([]);
     const [number, setNumber] = useState(noofpost)
     const [Updatednumber, setUpdatednumber] = useState(noofpost); 
-    const [Totalarticles, setTotalarticles] = useState(0);  
+    const [Totalarticles, setTotalarticles] = useState("null");  
 
     const searchRecipes =async () =>{
       try{
@@ -21,6 +21,7 @@ const Receipemain = () => {
         const res = await fetch(url);
         const data= await res.json();
         console.log("data",data)
+        
         setRecipes(data.meals);
 
         const Totalarticles = data.meals.length;
@@ -46,6 +47,7 @@ const Receipemain = () => {
     useEffect(()=>{
         searchRecipes();
         
+        
     },[])
 const handleQuery =(event) =>{
     setQuery(event.target.value)
@@ -68,11 +70,12 @@ const handleQuery =(event) =>{
      
   }
     useEffect(() => {
-        
+      setIsLoading(true);
       console.log("Updated numbers:", number);
       setUpdatednumber(number);
       searchRecipes()
     }, [number]);
+
 
 
   return (
@@ -89,29 +92,37 @@ const handleQuery =(event) =>{
     />
     <div className="recipes">
       
-      {recipes ? recipes.map((recipe , index) => (
-        <RecipeCard
-           key={recipe.idMeal}
-           recipe={recipe}
-           Updatednumber={Updatednumber}
-           index={index}
-        />
-      )) : "No Results."}
+    {recipes && recipes.length > 0 ? (
+  recipes.map((recipe, index) => (
+    <RecipeCard
+      key={recipe.idMeal}
+      recipe={recipe}
+      Updatednumber={Updatednumber}
+      index={index}
+    />
+  ))
+) : (
+  "No Results."
+  
+)}
+
  
     </div>
     <div className='buttons'>
     {((Totalarticles < Updatednumber && Totalarticles > noofpost) || Updatednumber > noofpost ) ? <button onClick={handleprev} className="learnmore learnmoreprev">
         Prev
     </button> : null } 
-    {(Totalarticles > Updatednumber) ? <button onClick={handlenext} className="learnmorenext learnmore">
+    {(Totalarticles > Updatednumber && !Totalarticles == 0 ) ? <button onClick={handlenext} className="learnmorenext learnmore">
         Next
     </button> : null } 
     </div>
   </div>
-  {/* <div className={`spinner ${isLoading ? "active" : ""}`}>
+  <div className={`spinner ${isLoading ? "active" : ""}`}>
 
-  <div className='loader'></div>
- </div> */}
+  <div className='loader'>
+    
+  </div>
+ </div>
   </div>
 
   )
