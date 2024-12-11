@@ -6,7 +6,8 @@ import { useState ,useEffect } from 'react';
 const apiUrl ="https://www.themealdb.com/api/json/v1/1/search.php?s="
 
 const Receipemain = () => {
-    let noofpost = 6;
+  
+    let noofpost = (window.innerWidth > 767) ? 10 : 9;
     const [isLoading, setIsLoading] = useState(false);
     const [query, setQuery] = useState("")
     const [recipes, setRecipes] =useState([]);
