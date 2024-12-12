@@ -5,7 +5,7 @@ import {   div,
     Button,
     } from '@mui/material';
   
-  import {inputFormElements} from ".././formElements"
+  import {inputFormElements} from "../Data/formElements"
   import emailjs from '@emailjs/browser';
   import "../CSS/Form.css"
 export const Form = () => {

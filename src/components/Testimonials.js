@@ -8,7 +8,7 @@ import 'swiper/css/navigation';
 
 import 'swiper/css/pagination';
 import TestimonialBox from './TestimonialBox';
-import { Testimonialselement } from '../TestimonialsElements';
+import { Testimonialselement } from '../Data/TestimonialsElements';
 const Testimonials = () =>{
     
     return(

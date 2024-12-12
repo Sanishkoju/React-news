@@ -1,5 +1,5 @@
 
-import {accordiondata} from ".././accordiansElements"
+import {accordiondata} from "../Data/accordiansElements"
 import AccordiansCard from './AccordiansCard'
 import "../CSS/Accordians.css"
 

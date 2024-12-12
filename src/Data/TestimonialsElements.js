@@ -3,13 +3,13 @@ export const Testimonialselement = [
         names: "team_member1",
         image: '/team_menber1.jpg',
         positions: 'Frontend Developers',
-        description: "Front-end development brings ideas to life! It’s amazing how code transforms into stunning, interactive designs.Front-end development brings ideas to life! It’s amazing how code transforms into stunning, interactive designs.Front-end development brings ideas to life! It’s amazing how code transforms into stunning, interactive designs.",
+        description: "Front-end development brings ideas to life! It’s amazing how code transforms into stunning, interactive designs.Front-end development brings ideas to life! It’s amazing how code transforms into stunning, interactive designs.Front-end development brings ideas to life! It’s amazing how code transforms into stunning, interactive designs. It’s amazing how code transforms into stunning, interactive designs.",
     },
     {
         names: "team_member1",
         image: '/team_member.jpg',
         positions: 'Frontend Developers',
-        description: "The power of a well-designed UI cannot be overstated—front-end is where user experience begins Front-end development brings ideas to life! It’s amazing how code transforms into stunning, interactive designs.Front-end development brings ideas to life! It’s amazing how code transforms into stunning, interactive designs.",
+        description: "The power of a well-designed UI cannot be overstated—front-end is where user experience begins Front-end development brings ideas to life! It’s amazing how code transforms into stunning, interactive designs.Front-end development brings ideas to life! It’s amazing how code transforms into stunning, interactive designs. It’s amazing how code transforms into stunning, interactive designs. It’s amazing how code transforms into stunning, interactive designs.",
     },
     {
         names: "team_member1",
