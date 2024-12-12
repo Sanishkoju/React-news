@@ -1,5 +1,17 @@
+import { useRef ,useState} from 'react';
 const TestimonialBox= (props)=>{ 
+    const Read = useRef();
+    const [open, setOpen] = useState(true);
+    
+    const handleRead = (e)=>{
+        console.log("rad",Read.current)
+        console.log("e",e)
+        setOpen(!open);
+        console.log("open",open)
+        Read.current.style.overflow= open ? "auto" : "hidden";
+        
 
+    }
     return(
         <div style={{
             padding: '24px',
@@ -58,11 +70,13 @@ const TestimonialBox= (props)=>{
             marginTop: '28px',
             }}
             >
-            <p style={{
+            <p ref={Read} style={{
             color: 'black',
             fontSize: '0.875rem',
+            height: "80px" ,overflow:"hidden"
             }}
             >{props.desc}</p>
+            <span onClick={() => handleRead(props.e)}   style={{cursor:"pointer"}} >{open ? "readmore..." : "readless" }</span>
            </div>
            </>
 

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import NotFound from '../pages/NotFound';
+import "../CSS/Single.css"
+import "../CSS/Spinner.css"
 const Single = () => {
     const {mealids} = useParams();
     const [info, setInfo] = useState();
@@ -45,7 +47,7 @@ const Single = () => {
             </figure>
             <div class="info_det">
               { info.strTags ?
-             <div><strong>tag: </strong>{info.strTags}</div>
+             <div className='tag'><strong>tag: </strong>{info.strTags}</div>
              : null
              }
             <div className="info_ingredient">

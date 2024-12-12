@@ -1,0 +1,46 @@
+/* accordians */
+.accordianswrapper:not(:last-child){
+    border-bottom: 1px solid #e9ecef;
+  }
+  
+   .accordiancontent{
+    transition: all 0.3s ease-in-out;
+    overflow:hidden;
+    padding-inline: 20px;
+    background-color: #ffffff;
+        color: #6c757d;
+        font-size: 14px;
+        line-height: 1.6;
+  }
+  .accordianquestion{
+    padding: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background-color: #f1f3f5;
+  } 
+  .accordian_container{
+    width: 100%;
+    max-width: 80%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin:auto;
+  }
+  .icon{
+    position: absolute;
+    right:20px;
+    top:calc(50% - 18/2 );
+    transition:transform 0.3s ease-in-out ;
+  }
+  .accordianquestion.open .icon{
+   transform: rotatez(-180deg);
+  }
+  .accordians_sec{
+    padding-block: 60px;
+  }
+  

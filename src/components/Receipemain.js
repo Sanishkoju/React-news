@@ -2,6 +2,8 @@ import React from 'react'
 import RecipeCard from "../components/RecipeCard";
 import SearchBar from "../components/SearchBar";
 import { useState ,useEffect } from 'react';
+import "../CSS/Recipe.css"
+import "../CSS/Spinner.css"
 
 const apiUrl ="https://www.themealdb.com/api/json/v1/1/search.php?s="
 

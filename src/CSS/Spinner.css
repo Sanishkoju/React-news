@@ -1,0 +1,42 @@
+/* 
+.spinner */
+
+.loader {
+    width: 80px;
+    height: 80px;
+    border: 10px solid #fa0;
+    border-top: 10px solid tomato;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    position: absolute;
+      top: calc(50% - 40px);
+      left: calc(50% - 40px)
+  
+      
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
+  }
+  
+  .single, .receipe,section{
+    position:relative;
+    padding-top: 65px;
+  }
+  .spinner{
+    display:none;
+    width:100vw;
+    height:100vh;
+    position: fixed;
+    top:0%;
+    left:0%;
+   
+    background-color:#000000a6;
+  }
+  .spinner.active{
+    display: block;
+    margin: auto;
+   
+  }
+  

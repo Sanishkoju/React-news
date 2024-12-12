@@ -1,7 +1,7 @@
 
 import {accordiondata} from ".././accordiansElements"
 import AccordiansCard from './AccordiansCard'
-
+import "../CSS/Accordians.css"
 
 const Accordians = () => {
 

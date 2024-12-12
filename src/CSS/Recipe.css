@@ -1,0 +1,126 @@
+/* receipe */
+
+
+.receipe form {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .receipe input {
+    border: 1px solid #f7f7f7;
+    padding: 10px;
+    font-size: 16px;
+  
+  }
+  .receipe  input:focus {
+    outline: none;
+  }
+  
+  .receipe .form-control {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 400px;
+  }
+  
+  .receipe .btn {
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    cursor: pointer;
+    background-color: rgb(255, 108, 108);;
+    color:black;
+    max-width:100px;
+  
+  }
+  
+  .recipes {
+    display: grid;
+   grid-template-columns: repeat(4 , 1fr);
+   gap:20px;
+  }
+  
+  .receipe .card {
+    /* width: 200px; */
+    background-color: white;
+    /* margin: 10px; */
+    border-radius: 5px;
+    padding-bottom: 10px;
+  }
+  
+  .receipe .card-image {
+    width: 100%;
+  }
+  
+  .receipe .card-body {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .receipe .category {
+    color: #a1a1a1;
+  }
+  
+  .receipe a {
+    background-color: rgb(255, 108, 108);;
+    color: inherit;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    color:#fff;
+  }
+  .card.active{
+    grid-column: 1 / span 3;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    min-height: 300px;
+  
+  }
+  .card.active img{
+  object-fit: cover;
+  object-position: center;
+  min-height: -webkit-fill-available;
+  position: absolute;
+  }
+  .card.active .card-body{
+    display:block;
+    margin-top:auto;
+  }
+  .main_fig{
+    position: relative;
+    margin: 0;
+  }
+  .text {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+            line-clamp: 2; 
+    -webkit-box-orient: vertical;
+    position: absolute;
+    bottom: 20px;
+    right:20px;
+    left:20px;
+    font-size: 20px;
+    color: #fff;
+    z-index:2
+  }
+  .overlay{
+    position: absolute;
+    width:100%;
+    height:100%;
+    offset: 0;
+    background-color: #00000075;
+    z-index:1;
+  }
+
+  
+  @media(max-width:600px){
+    .recipes {
+      grid-template-columns: repeat(2, 1fr);
+      
+     }
+     .card.active{
+       grid-column: 1 / span 2;
+       display: grid;
+       grid-template-columns: 1fr 1fr;
+     }
+  }

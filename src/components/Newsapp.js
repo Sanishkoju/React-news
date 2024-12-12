@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import Card from './Card'
-
+import "../CSS/Spinner.css"
 
 const Newsapp = () => {
     let noofpost = 8;

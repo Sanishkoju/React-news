@@ -7,6 +7,7 @@ import {   div,
   
   import {inputFormElements} from ".././formElements"
   import emailjs from '@emailjs/browser';
+  import "../CSS/Form.css"
 export const Form = () => {
     const form = useRef();
     const sendEmail = (e) => {

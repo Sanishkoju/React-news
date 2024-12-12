@@ -1,0 +1,46 @@
+/* single */
+.infotop{
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap:20px
+  
+  }
+  .single{
+    padding-block:80px;
+  }
+  .single figure{
+    max-width:800px;
+    overflow: hidden;
+    height:500px;
+    margin-inline: 0;
+  }
+  .infotop li{
+    margin-block: 8px;
+    border-bottom: 2px dotted #ff6c66;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  .info_ingredient{
+    padding:15px;
+    border:2px solid #ff6c66;
+    border-radius: 12px;
+    width:100%;
+  }
+  .info_det{
+    flex: 0 0 40%;
+
+  }
+  .tag{
+    margin-block:20px;
+
+  }
+
+  @media(max-width:1024px){
+    .info_det{
+        flex: 0 0 90%;
+    
+      }
+  }
+
+  

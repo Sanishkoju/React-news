@@ -1,5 +1,7 @@
+
 import {Swiper,SwiperSlide} from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
+
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -8,6 +10,7 @@ import 'swiper/css/pagination';
 import TestimonialBox from './TestimonialBox';
 import { Testimonialselement } from '../TestimonialsElements';
 const Testimonials = () =>{
+    
     return(
         <section style={{ paddingTop: '64px', paddingBottom: '64px' }}>
             <div className='container'>
@@ -54,7 +57,7 @@ const Testimonials = () =>{
                         // overflow: 'hidden',
                         }}
                         >
-                    <TestimonialBox src={item.image } name={item.names} position={item.positions}  desc={item.description}/>
+                    <TestimonialBox src={item.image } name={item.names} position={item.positions}  desc={item.description} e={index}/>
                     </div>         
                 </SwiperSlide>
 ))}
