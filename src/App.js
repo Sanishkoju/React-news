@@ -5,13 +5,16 @@ import Contact from './pages/Contact.js';
 import Receipe from './pages/Receipe.js';
 import SingleReceipe from './pages/SingleReceipe.js';
 import NotFound from './pages/NotFound.js'; 
+import Header from './components/Header.js';
 
 
 export default function App() {
 
   return (
     <>
+
     <BrowserRouter>
+    <Header />
         <Routes>
           <Route index element ={<Receipe />} />
           <Route path="/news" element ={<Home />} />

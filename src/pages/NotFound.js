@@ -1,11 +1,9 @@
 import React from 'react'
-import Header from "../components/Header";
 
 const NotFound = () => {
     
   return (
     <>
-    <Header />
     <section className="page_404">
 	<div className="container">
 		<div className="row">	
