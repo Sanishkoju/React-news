@@ -52,9 +52,9 @@ const icon = {
             {
                 showImg ? 
                 <div className='popup' style={{position:"fixed", top:"0" ,left:"0" ,bottom:"0",width:"100%", height:"100%",zIndex:"10",background:"#000000c9" }}>
-                <div style={{display:"grid", placeContent:"center", width:"100%", height:"100%"}}>
+                <div style={{display:"grid", placeContent:"center", width:"calc(100% - 40px)", height:"100%" ,padding:"20px" }}>
                     <span style={icon} onClick={()=>setShowImg(false)}><Cross /></span>
-                    <figure style={{maxWidth:"500px" ,aspectRatio:"1", width:"100%", margin:"20px"}}>
+                    <figure style={{maxWidth:"500px" ,aspectRatio:"1", width:"100%" ,margin:"0"}}>
                     <img
                 src={recipe.strMealThumb}
                 alt={recipe.strMeal}
