@@ -33,7 +33,7 @@ const icon = {
             />
                 {(Updatednumber - (Updatednumber - index)) === 0 ? 
                <> <p className='text'>{recipe.strInstructions}</p>
-                <div className="overlay"></div>
+                {/* <div className="overlay"></div> */}
             
                 </>
                  : null
@@ -61,7 +61,7 @@ const icon = {
                 className="card-image"
                 width={100}
                 height={100}
-                style={{width:"100%" ,height:"100%"}}
+                style={{width:"100%" ,height:"100%" ,position:"static"}}
 
 
             />
