@@ -16,6 +16,7 @@ const Receipemain = () => {
     const [number, setNumber] = useState(noofpost)
     const [Updatednumber, setUpdatednumber] = useState(noofpost); 
     const [Totalarticles, setTotalarticles] = useState(0);  
+    const [showImg, setShowImg] = useState(false);
 
     const searchRecipes =async () =>{
       try{
@@ -73,6 +74,7 @@ const handleQuery =(event) =>{
 
      
   }
+
     useEffect(() => {
       setIsLoading(true);
       console.log("Updated numbers:", number);
@@ -86,6 +88,7 @@ const handleQuery =(event) =>{
 
     <div className='receipe'>
     <div className="container">
+
     <h2>Our Food Recipes</h2>
     <SearchBar
       isLoading={isLoading}
