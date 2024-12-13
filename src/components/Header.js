@@ -1,16 +1,22 @@
-import { useState ,useEffect } from 'react';
+import { useState ,useRef,useEffect } from 'react';
 import { BrowserRouter,Routes,Route,NavLink } from 'react-router-dom';
 
 
 const Header = () => {
     const [showNavbar, setShowNavbar] = useState(false);
+    const Sidebar = useRef();
 
+
+console.log("ffd",Sidebar)
     const handleShowNavbar = () => {
       setShowNavbar(!showNavbar);
-      console.log("showNavbar",showNavbar)
+
     };
+    
+
+
   return (
-    <nav className="navbar">
+    <nav ref={Sidebar} className="navbar">
       <div className="container">
         <div className="logo">
         <NavLink to="/"><h1>Logo</h1></NavLink>
@@ -22,14 +28,14 @@ const Header = () => {
         <div className={`nav-elements  ${showNavbar && "active"}`}>
           <ul>
           <li>
-              <NavLink to="/news">News</NavLink>
+              <NavLink onClick={()=> setShowNavbar(false) } to="/news">News</NavLink>
             </li>
 
             <li>
-              <NavLink to="/receipe">Receipe</NavLink>
+              <NavLink onClick={()=> setShowNavbar(false) } to="/receipe">Receipe</NavLink>
             </li>
             <li>
-              <NavLink to="/contact">Contact</NavLink>
+              <NavLink onClick={()=> setShowNavbar(false) } to="/contact">Contact</NavLink>
             </li>
           </ul>
         </div>

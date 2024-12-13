@@ -184,7 +184,7 @@ a{
   }
 
    .nav-elements.active {
-    width: 270px;
+    width: 100%;
     z-index: 4;
   }
 
